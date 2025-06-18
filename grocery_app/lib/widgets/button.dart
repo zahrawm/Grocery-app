@@ -21,7 +21,7 @@ class MyButton extends StatelessWidget {
       textColor: Colors.black,
       minWidth: 380,
       height: 50,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

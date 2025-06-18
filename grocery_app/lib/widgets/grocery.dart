@@ -14,7 +14,11 @@ class Grocery extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
 
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
+        ),
+       
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
