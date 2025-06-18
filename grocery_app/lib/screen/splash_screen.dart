@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:grocery_app/screen/login_screen.dart';
 
@@ -23,18 +22,19 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.grey,
       body: Stack(
         children: [
           Center(
             child: SizedBox(
               height: 240,
               width: 240,
-              child: Image.asset("assets/bo.jpg", fit: BoxFit.cover),
+              child: Image.asset("assets/grocery.png", fit: BoxFit.cover),
             ),
           ),
         ],
