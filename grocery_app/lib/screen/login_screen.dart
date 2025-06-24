@@ -82,7 +82,13 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              MyButton(text: 'Continue', color: Colors.white),
+              MyButton(
+                text: 'Continue',
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
+              ),
             ],
           ),
         ),

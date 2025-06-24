@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/screen/grocery_screen.dart.dart';
 import 'package:grocery_app/screen/home_screen.dart' show HomeScreen;
 
 import 'package:grocery_app/screen/login_screen.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (_) => const SplashScreen(),
         '/login': (_) => const LoginScreen(),
-      '/home': (_) => const HomeScreen(),
+        '/home': (_) => const HomeScreen(),
+        '/grocery': (_) => const GroceryScreen(),
       },
     );
   }
