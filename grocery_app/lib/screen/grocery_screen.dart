@@ -44,9 +44,7 @@ class GroceryScreen extends StatelessWidget {
             MyButton(
               text: 'Login in ',
               color: Color.fromRGBO(48, 80, 130, 1.0),
-              onPressed: () {
-                // Navigator.pushNamed(context, '/grocery');
-              },
+              onPressed: () {},
             ),
 
             SizedBox(height: 10),
@@ -55,7 +53,7 @@ class GroceryScreen extends StatelessWidget {
               text: 'Sign in with Google',
               color: Colors.white,
               onPressed: () {
-                print('Google sign in pressed');
+                Navigator.pushNamed(context, '/fruit');
               },
             ),
             SizedBox(height: 10),
