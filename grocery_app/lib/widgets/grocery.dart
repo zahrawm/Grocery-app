@@ -15,10 +15,10 @@ class Grocery extends StatelessWidget {
         color: Colors.white,
 
         borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
+          bottomLeft: Radius.circular(50),
+          bottomRight: Radius.circular(50),
         ),
-       
+
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),

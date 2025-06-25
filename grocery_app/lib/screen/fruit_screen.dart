@@ -6,7 +6,7 @@ class FruitScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -38,73 +38,91 @@ class FruitScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Container(
-              height: 45,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  _buildCategoryTab('All', true),
-                  _buildCategoryTab('Fruits', false),
-                  _buildCategoryTab('Fast Food', false),
-                  _buildCategoryTab('Vegetables', false),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Popular Fruits',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-
-            // Fruits grid
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                childAspectRatio: 0.8,
-                children: [
-                  _buildFruitCard(
-                    'Apple',
-                    '\$16.75/kg',
-                    '🍎',
-                    Colors.red.shade50,
-                  ),
-                  _buildFruitCard(
-                    'Orange',
-                    '\$14.75/kg',
-                    '🍊',
-                    Colors.orange.shade50,
-                  ),
-                  _buildFruitCard(
-                    'Capsicum',
-                    '\$12.75/kg',
-                    '🫑',
-                    Colors.green.shade50,
-                  ),
-                  _buildFruitCard(
-                    'Dragon',
-                    '\$6.25/kg',
-                    '🐉',
-                    Colors.purple.shade50,
-                  ),
-                ],
-              ),
+      body: Container(
+        margin: const EdgeInsets.only(top: 16.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(100),
+            bottomRight: Radius.circular(100),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 10,
+              offset: Offset(0, 3),
             ),
           ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Container(
+                height: 45,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    _buildCategoryTab('All', true),
+                    _buildCategoryTab('Fruits', false),
+                    _buildCategoryTab('Fast Food', false),
+                    _buildCategoryTab('Vegetables', false),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Popular Fruits',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // Fruits grid
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.8,
+                  children: [
+                    _buildFruitCard(
+                      'Apple',
+                      '\$16.75/kg',
+                      '🍎',
+                      Colors.red.shade50,
+                    ),
+                    _buildFruitCard(
+                      'Orange',
+                      '\$14.75/kg',
+                      '🍊',
+                      Colors.orange.shade50,
+                    ),
+                    _buildFruitCard(
+                      'Capsicum',
+                      '\$12.75/kg',
+                      '🫑',
+                      Colors.green.shade50,
+                    ),
+                    _buildFruitCard(
+                      'Dragon',
+                      '\$6.25/kg',
+                      '🐉',
+                      Colors.purple.shade50,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -181,7 +199,6 @@ class FruitScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-         
           Text(
             name,
             style: const TextStyle(
@@ -198,7 +215,6 @@ class FruitScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
 
-         
           Container(
             width: 32,
             height: 32,
