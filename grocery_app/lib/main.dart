@@ -6,6 +6,7 @@ import 'package:grocery_app/screen/grocery_screen.dart';
 import 'package:grocery_app/screen/home_screen.dart' show HomeScreen;
 
 import 'package:grocery_app/screen/login_screen.dart';
+import 'package:grocery_app/screen/orange_screen.dart';
 import 'package:grocery_app/screen/splash_screen.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/home': (_) => const HomeScreen(),
         '/grocery': (_) => const GroceryScreen(),
         '/fruit': (_) => const FruitScreen(),
+        '/orange': (_) => const OrangeScreen(),
       },
     );
   }

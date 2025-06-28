@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/widgets/fruit_grid_screen.dart';
 
 class FruitScreen extends StatelessWidget {
   const FruitScreen({Key? key}) : super(key: key);
@@ -7,6 +8,47 @@ class FruitScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        height: 60,
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(48, 80, 130, 1.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              blurRadius: 10,
+              spreadRadius: 1,
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _buildNavItem(
+              Icons.home,
+              isSelected: false,
+              onTap: () {
+                Navigator.pushNamed(context, '/home');
+              },
+            ),
+            _buildNavItem(Icons.bookmark, isSelected: true, onTap: () {}),
+            _buildNavItem(
+              Icons.menu,
+              isSelected: false,
+              onTap: () {
+                Navigator.pushNamed(context, '/orange');
+              },
+            ),
+            _buildNavItem(
+              Icons.person,
+              isSelected: false,
+              onTap: () {
+                // Navigator.pushNamed(context, '/home');
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -40,7 +82,7 @@ class FruitScreen extends StatelessWidget {
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 16.0),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(100),
@@ -48,7 +90,7 @@ class FruitScreen extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey,
               spreadRadius: 1,
               blurRadius: 10,
               offset: Offset(0, 3),
@@ -59,7 +101,7 @@ class FruitScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 45,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -72,7 +114,6 @@ class FruitScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -85,64 +126,32 @@ class FruitScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-
-              // Fruits grid
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.8,
-                  children: [
-                    _buildFruitCard(
-                      'Apple',
-                      '\$16.75/kg',
-                      '🍎',
-                      Colors.red.shade50,
-                    ),
-                    _buildFruitCard(
-                      'Orange',
-                      '\$14.75/kg',
-                      '🍊',
-                      Colors.orange.shade50,
-                    ),
-                    _buildFruitCard(
-                      'Capsicum',
-                      '\$12.75/kg',
-                      '🫑',
-                      Colors.green.shade50,
-                    ),
-                    _buildFruitCard(
-                      'Dragon',
-                      '\$6.25/kg',
-                      '🐉',
-                      Colors.purple.shade50,
-                    ),
-                  ],
-                ),
-              ),
+              const Expanded(child: FruitGridScreen()),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xFF1a1a2e),
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: 'Category',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
+    );
+  }
+
+  Widget _buildNavItem(
+    IconData icon, {
+    required bool isSelected,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.orange : Colors.transparent,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Icon(
+          icon,
+          color: isSelected ? Colors.white : Colors.grey,
+          size: 24,
+        ),
       ),
     );
   }
@@ -198,7 +207,6 @@ class FruitScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-
           Text(
             name,
             style: const TextStyle(
@@ -208,13 +216,11 @@ class FruitScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 4),
-
           Text(
             price,
             style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
           ),
           const SizedBox(height: 8),
-
           Container(
             width: 32,
             height: 32,
