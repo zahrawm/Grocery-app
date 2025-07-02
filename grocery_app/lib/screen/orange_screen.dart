@@ -8,176 +8,216 @@ class OrangeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(leading: Icon(Icons.arrow_back)),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(50),
-              bottomRight: Radius.circular(50),
-            ),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
-                blurRadius: 10,
-                spreadRadius: 5,
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(child: Image.asset("assets/orange.png", height: 150)),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        "Fresh Orange",
-                        style: TextStyle(
-                          color: Color.fromRGBO(48, 80, 130, 1.0),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(48, 80, 130, 1.0),
-                      ),
-                      child: Icon(Icons.remove, color: Colors.white),
-                    ),
-                    SizedBox(width: 15),
-                    Text(
-                      '1kg',
-                      style: TextStyle(
-                        color: Color.fromRGBO(48, 80, 130, 1.0),
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    SizedBox(width: 15),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(48, 80, 130, 1.0),
-                      ),
-                      child: Icon(Icons.add, color: Colors.white),
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(50),
+                    bottomRight: Radius.circular(50),
+                  ),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      spreadRadius: 5,
                     ),
                   ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Fresh and juicy oranges',
-                      style: TextStyle(color: Colors.grey),
+                    Center(
+                      child: Image.asset("assets/orange.png", height: 150),
                     ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Product Description",
-                      style: TextStyle(
-                        color: Color.fromRGBO(48, 80, 130, 1.0),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "Fresh Orange",
+                              style: TextStyle(
+                                color: Color.fromRGBO(48, 80, 130, 1.0),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color.fromRGBO(48, 80, 130, 1.0),
+                            ),
+                            child: Icon(Icons.remove, color: Colors.white),
+                          ),
+                          SizedBox(width: 15),
+                          Text(
+                            '1kg',
+                            style: TextStyle(
+                              color: Color.fromRGBO(48, 80, 130, 1.0),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(width: 15),
+                          Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color.fromRGBO(48, 80, 130, 1.0),
+                            ),
+                            child: Icon(Icons.add, color: Colors.white),
+                          ),
+                        ],
                       ),
                     ),
-                    Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                      'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "Product Reviews",
-                      style: TextStyle(
-                        color: Color.fromRGBO(48, 80, 130, 1.0),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 20,
-                          backgroundImage: AssetImage("assets/girl.png"),
-                        ),
-                        SizedBox(width: 15),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Fresh and juicy oranges',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Product Description",
+                            style: TextStyle(
+                              color: Color.fromRGBO(48, 80, 130, 1.0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          Text(
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                            'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            "Product Reviews",
+                            style: TextStyle(
+                              color: Color.fromRGBO(48, 80, 130, 1.0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Row(
                             children: [
-                              Text("Victor Perez"),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Colors.yellow,
-                                    size: 16,
-                                  ),
-                                ],
+                              CircleAvatar(
+                                radius: 20,
+                                backgroundImage: AssetImage("assets/girl.png"),
+                              ),
+                              SizedBox(width: 15),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Victor Perez"),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow,
+                                          size: 16,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow,
+                                          size: 16,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow,
+                                          size: 16,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow,
+                                          size: 16,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow,
+                                          size: 16,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Text(
+                                '25th June 2025',
+                                style: TextStyle(color: Colors.grey),
                               ),
                             ],
                           ),
-                        ),
-                        Text(
-                          '25th June 2025',
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                      'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      'Similar Products',
-                      style: TextStyle(
-                        color: Color.fromRGBO(48, 80, 130, 1.0),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                          SizedBox(height: 5),
+                          Text(
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                            'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            'Similar Products',
+                            style: TextStyle(
+                              color: Color.fromRGBO(48, 80, 130, 1.0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                        ],
                       ),
                     ),
-                    SizedBox(height: 15),
                   ],
                 ),
               ),
-            ],
+            ),
           ),
-        ),
+
+          Container(height: 20, color: Color.fromRGBO(48, 80, 130, 1.0)),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(color: Color.fromRGBO(48, 80, 130, 1.0)),
+            child: SafeArea(
+              top: false,
+              child: Row(
+                children: [
+                  Text(
+                    "\$299.99",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Spacer(),
+                  Flexible(
+                    child: MyButton(
+                      text: 'Add to Cart',
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/vegetable');
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

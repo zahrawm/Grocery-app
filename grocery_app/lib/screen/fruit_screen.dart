@@ -43,7 +43,7 @@ class FruitScreen extends StatelessWidget {
               Icons.person,
               isSelected: false,
               onTap: () {
-                // Navigator.pushNamed(context, '/home');
+                
               },
             ),
           ],
