@@ -8,6 +8,7 @@ import 'package:grocery_app/screen/home_screen.dart' show HomeScreen;
 import 'package:grocery_app/screen/login_screen.dart';
 import 'package:grocery_app/screen/orange_screen.dart';
 import 'package:grocery_app/screen/search_screen.dart';
+import 'package:grocery_app/screen/slider_screen.dart';
 import 'package:grocery_app/screen/splash_screen.dart';
 import 'package:grocery_app/screen/vegetable_screen.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/orange': (_) => const OrangeScreen(),
         '/vegetable': (_) => const VegetableScreen(),
         '/search': (_) => const SearchScreen(),
+        '/slider': (_) => const SliderScreen(),
       },
     );
   }

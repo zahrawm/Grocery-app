@@ -31,7 +31,13 @@ class FruitScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/home');
               },
             ),
-            _buildNavItem(Icons.bookmark, isSelected: true, onTap: () {}),
+            _buildNavItem(
+              Icons.bookmark,
+              isSelected: true,
+              onTap: () {
+                Navigator.pushNamed(context, '/slider');
+              },
+            ),
             _buildNavItem(
               Icons.menu,
               isSelected: false,
@@ -39,13 +45,7 @@ class FruitScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/orange');
               },
             ),
-            _buildNavItem(
-              Icons.person,
-              isSelected: false,
-              onTap: () {
-                
-              },
-            ),
+            _buildNavItem(Icons.person, isSelected: false, onTap: () {}),
           ],
         ),
       ),
